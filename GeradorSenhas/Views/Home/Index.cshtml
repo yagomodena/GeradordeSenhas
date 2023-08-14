@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Gerador de Senhas";
+}
+
+<h1>Gerador de Senhas</h1>
+
+<form method="post" asp-action="GeradorSenhas">
+    <label for="tamanho">Quantos caracteres deseja colocar na senha?</label>
+    <input type="number" id="tamanho" name="tamanho" min="5" max="25" value="5"/>
+    <button type="submit">Gerar</button>
+</form>
+
+@if (ViewData["GeradorSenhas"] != null)
+{
+    <h2>Senha Gerada:</h2>
+    <p>@ViewData["GeradorSenhas"]</p>
+}
